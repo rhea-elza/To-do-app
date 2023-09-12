@@ -1,0 +1,8 @@
+﻿@model List<Todo>
+
+<h1>ToDo List</h1>
+@foreach (var obj in Model)
+{
+    <ul id="tasks-list" class="ui segments">@obj.Item</ul>
+    <a asp-controller="Todo" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+}
