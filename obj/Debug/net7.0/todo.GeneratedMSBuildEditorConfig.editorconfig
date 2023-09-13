@@ -32,12 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rhea.elza/Documents/To-do-app/Views/Todo/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9JbmRleC5jc2h0bWw=
+[/Users/rhea.elza/Documents/To-do-app/Views/Todo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/rhea.elza/Documents/To-do-app/Views/Todo/List.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9MaXN0LmNzaHRtbA==
+[/Users/rhea.elza/Documents/To-do-app/Views/Todo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/rhea.elza/Documents/To-do-app/Views/Todo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/rhea.elza/Documents/To-do-app/Views/_ViewImports.cshtml]

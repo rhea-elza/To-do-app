@@ -10,28 +10,30 @@ using todo.Data;
 
 namespace todo.Controllers
 {
-    public class TodoController : Controller, ITodoController
+    public class TodoController : Controller
     {
         private readonly AppDbContext _db;
+
         public TodoController(AppDbContext db)
         {
             _db = db;
         }
+
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Index(Todo obj)
+        public IActionResult Create(Todo obj)
         {
             _db.Todo.Add(obj);//Keeps track of all the changes you need to do in the db
             _db.SaveChanges();//go to database and create that category
             return View();
         }
 
-        public IActionResult List()
+        public IActionResult Index()
         {
             List<Todo> objTodoList = _db.Todo.ToList();
             return View(objTodoList);
@@ -51,8 +53,9 @@ namespace todo.Controllers
 
             _db.Todo.Remove(todoFromDb);
             _db.SaveChanges();
-            return RedirectToAction("List");
+            return RedirectToAction("Index");
         }
+
         public IActionResult Edit(int? id)
         {
             if (id == null || id == 0)
@@ -65,24 +68,16 @@ namespace todo.Controllers
                 return NotFound();
             }
 
-            _db.Todo.Remove(todoFromDb);
-            _db.SaveChanges();
-            return RedirectToAction("List");
+            return View(todoFromDb);
         }
-        //[HttpPost]
-        //public IActionResult Delete(Todo obj)
-        //{
-        //    _db.Todo.Add(obj);//Keeps track of all the changes you need to do in the db
-        //    _db.SaveChanges();//go to database and create that category
-        //    return RedirectToAction("List");
-        //}
-        //[HttpPost]
-        //public IActionResult Delete(int? id)
-        //{
-        //    Todo? obj = _db.Todo.Find(id);
-        //    _db.Todo.Remove(obj);
-        //    return RedirectToAction("List");
-        //}
+
+        [HttpPost]
+        public IActionResult Edit(Todo obj)
+        {
+            _db.Todo.Update(obj);//Keeps track of all the changes you need to do in the db
+            _db.SaveChanges();//go to database and create that category
+            return RedirectToAction("Index");
+        }
 
     }
 }

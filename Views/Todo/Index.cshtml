@@ -1,65 +1,28 @@
-﻿@model Todo
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>To-Do List App</title>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Links -->
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap"
-          rel="stylesheet" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-          integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-          crossorigin="anonymous" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css"
-          integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA=="
-          crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/main.css" />
-</head>
-<body>
-    <!-- Main Header -->
-    <header class="main-header">
-        <div class="ui container">
-            <h1>To-Do List App</h1>
-        </div>
-    </header>
-    <!-- End Main Header -->
+﻿
 
-    <div class="ui container">
-        <!-- Add Task -->
-        <form method="post" id="add-task" class="ui left icon input fluid">
-            <input asp-for="Item" id="add-task-input"
-                   class="large"
-                   placeholder="Write your task here..." />
-            <i class="tasks icon"></i>
-        </form>
-        <!-- End Add Task -->
-        <!-- Buttons -->
-        <div class="col-6">
-            <a asp-controller="Todo" asp-action="List" class="btn btn-primary">Show List</a>
-        </div>
-        <!-- End Buttons -->
-        <!-- Tasks List -->
 
-        <!-- End Clear Completed Tasks Modal -->
-    </div>
+@model List<Todo>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
-            integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
-            integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
-            crossorigin="anonymous"></script>
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
-</html>
+<h1>To-Do List App</h1>
+<div class="col-6 text-end">
+    <a asp-controller="Todo" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-lg"></i>Add Task</a>
+</div>
+
+
+
+<table class="table">
+    @foreach (var obj in Model)
+    {
+        <tr>
+            <td>@obj.Item</td>
+            <td><a asp-controller="Todo" asp-action="Edit" asp-route-id="@obj.Id">Edit</a></td>
+            <td><a asp-controller="Todo" asp-action="Delete" asp-route-id="@obj.Id">Done</a></td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+
