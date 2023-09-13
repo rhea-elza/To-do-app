@@ -10,7 +10,7 @@ using todo.Data;
 
 namespace todo.Controllers
 {
-    public class TodoController : Controller
+    public class TodoController : Controller, ITodoController
     {
         private readonly AppDbContext _db;
         public TodoController(AppDbContext db)
@@ -22,6 +22,7 @@ namespace todo.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Index(Todo obj)
         {
@@ -29,11 +30,13 @@ namespace todo.Controllers
             _db.SaveChanges();//go to database and create that category
             return View();
         }
+
         public IActionResult List()
         {
             List<Todo> objTodoList = _db.Todo.ToList();
             return View(objTodoList);
         }
+
         public IActionResult Delete(int? id)
         {
             if (id == null || id == 0)
@@ -45,7 +48,23 @@ namespace todo.Controllers
             {
                 return NotFound();
             }
-            
+
+            _db.Todo.Remove(todoFromDb);
+            _db.SaveChanges();
+            return RedirectToAction("List");
+        }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Todo? todoFromDb = _db.Todo.Find(id);
+            if (todoFromDb == null)
+            {
+                return NotFound();
+            }
+
             _db.Todo.Remove(todoFromDb);
             _db.SaveChanges();
             return RedirectToAction("List");
@@ -67,4 +86,3 @@ namespace todo.Controllers
 
     }
 }
-

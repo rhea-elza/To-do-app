@@ -9,49 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = todo
 build_property.RootNamespace = todo
-build_property.ProjectDir = /Users/sikha.sreekumar/Projects/todo/
+build_property.ProjectDir = /Users/rhea.elza/Documents/To-do-app/
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = /Users/sikha.sreekumar/Projects/todo
+build_property.MSBuildProjectDirectory = /Users/rhea.elza/Documents/To-do-app
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Home/Index.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Home/Privacy.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Shared/Error.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Todo/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9EZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/sikha.sreekumar/Projects/todo/Views/Todo/Index.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Todo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Todo/List.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Todo/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kby9MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/_ViewImports.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/_ViewStart.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sikha.sreekumar/Projects/todo/Views/Shared/_Layout.cshtml]
+[/Users/rhea.elza/Documents/To-do-app/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-yc8ty0ugh9
