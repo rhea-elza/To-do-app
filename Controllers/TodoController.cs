@@ -30,7 +30,7 @@ namespace todo.Controllers
         {
             _db.Todo.Add(obj);//Keeps track of all the changes you need to do in the db
             _db.SaveChanges();//go to database and create that category
-            return View();
+            return RedirectToAction("Index");
         }
 
         public IActionResult Index()

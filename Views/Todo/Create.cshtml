@@ -1,51 +1,54 @@
 ﻿@model Todo
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Enter Task</title>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&display=swap"
-          rel="stylesheet" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-          integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
-          crossorigin="anonymous" />
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css"
-          integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA=="
-          crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/main.css" />
-</head>
 <body>
 
-<header class="main-header">
-    <div class="ui container">
-        <h1>To-Do List App</h1>
-    </div>
-</header>
+    <header class="main-header">
+        <div class="ui container">
+            <h1>To-Do List App</h1>
+        </div>
+    </header>
 
-<div class="ui container">
 
-<form method="post">
-    <div>
-        <input asp-for="Item" id="add-task-input"
-               class="large"
-               placeholder="Write your task here..." />
-        <i class="tasks icon"></i>
-    </div>
-</form>
 
-<div class="col-6">
-    <a asp-controller="Todo" asp-action="Index" class="btn btn-primary">Back</a>
-</div>
+    @*<form method="post">
+            <div>
+                <input asp-for="Item" id="add-task-input"
+                       class="large"
+                       placeholder="Write your task here..." />
+                <i class="tasks icon"></i>
+            </div>
+        </form>
 
-</div>
+        <div class="col-6">
+            <a asp-controller="Todo" asp-action="Index" class="btn btn-primary">Back</a>
+        </div>*@
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
+    <form method="post">
+        <div class="container">
+            <div class="row pb-2">
+                <div class="col">
+                    <input asp-for="Item" id="add-task-input"
+                           class="form-control"
+                           placeholder="Write your task here..." />
+
+                </div>
+            </div>
+            <div class="row pb-2">
+                <div class="col-6 col-md-3">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div>
+                        <a asp-controller="Todo" asp-action="Index" class="btn btn-primary">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"
             integrity="sha512-lOrm9FgT1LKOJRUXF3tp6QaMorJftUjowOWiDcG5GFZ/q7ukof19V0HKx/GWzXCdt9zYju3/KhBNdCLzK8b90Q=="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -58,4 +61,4 @@
             src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
-</html>
+
