@@ -787,3 +787,4 @@
 /Users/rhea.elza/Documents/To-do-app/obj/Debug/net7.0/todo.genruntimeconfig.cache
 /Users/rhea.elza/Documents/To-do-app/obj/Debug/net7.0/ref/todo.dll
 /Users/rhea.elza/Documents/To-do-app/bin/Debug/net7.0/Autofac.dll
+/Users/rhea.elza/Documents/To-do-app/bin/Debug/net7.0/Autofac.Extensions.DependencyInjection.dll

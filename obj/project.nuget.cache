@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6GqOcgPpllZi/8gLljomW3nDwMyrRmp+YOuMMiV6y7qtGt493FQf6xekSABUs6KxvU0eHh1aFr+mMh9UW8Zl+A==",
+  "dgSpecHash": "1ipL8BCut0uA6gtREZqaORE9tiS5+9rkYTGV87u0r+gBnYQXqFIXIBi8thNqot8DBH7HORXM7z5X7QSOgT1/DA==",
   "success": true,
   "projectFilePath": "/Users/rhea.elza/Documents/To-do-app/todo.csproj",
   "expectedPackageFiles": [
     "/Users/rhea.elza/.nuget/packages/autofac/7.1.0/autofac.7.1.0.nupkg.sha512",
+    "/Users/rhea.elza/.nuget/packages/autofac.extensions.dependencyinjection/8.0.0/autofac.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/rhea.elza/.nuget/packages/bouncycastle.netcore/1.8.3/bouncycastle.netcore.1.8.3.nupkg.sha512",
     "/Users/rhea.elza/.nuget/packages/google.protobuf/3.11.4/google.protobuf.3.11.4.nupkg.sha512",
     "/Users/rhea.elza/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",

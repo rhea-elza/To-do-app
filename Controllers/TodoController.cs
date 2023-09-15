@@ -12,9 +12,9 @@ namespace todo.Controllers
 {
     public class TodoController : Controller
     {
-        private readonly AppDbContext _db;
+        private readonly IAppDbContext _db;
 
-        public TodoController(AppDbContext db)
+        public TodoController(IAppDbContext db)
         {
             _db = db;
         }
