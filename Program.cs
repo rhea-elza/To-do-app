@@ -1,9 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using todo.Data;
-using Autofac.Extensions.DependencyInjection;
+using todo.Controllers;
 using Autofac;
+using Autofac.Core.Registration;
+using Autofac.Configuration;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
+
+using todo;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -15,19 +19,24 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(connectionString, serverVersion));
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
+
 //builder.Services.Add(new ServiceDescriptor(
 //    typeof(IAppDbContext),       //default IoC
 //    typeof(AppDbContext),
 //    ServiceLifetime.Transient)); //whenever a class asks for an IAppDbContext obj,create and pass an obj of AppDbContext
 
+
+var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddXmlFile("autofac.xml");
+var configuration = configBuilder.Build();
+
+var configModule = new ConfigurationModule(configuration);
+//containerBuilder.RegisterModule(configModule);
+//return containerBuilder.Build();
+
 builder.Host.ConfigureContainer<ContainerBuilder>
     (ContainerBuilder =>
-    {
-        ContainerBuilder.RegisterType<AppDbContext>()
-        .As<IAppDbContext>().InstancePerDependency();
-    });
-
-
+    
+    ContainerBuilder.RegisterModule(configModule));
 
 
 var app = builder.Build();

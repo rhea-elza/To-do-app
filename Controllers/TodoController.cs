@@ -10,7 +10,7 @@ using todo.Data;
 
 namespace todo.Controllers
 {
-    public class TodoController : Controller
+    public class TodoController : Controller, ITodoController
     {
         private readonly IAppDbContext _db;
 
@@ -78,6 +78,8 @@ namespace todo.Controllers
             _db.SaveChanges();//go to database and create that category
             return RedirectToAction("Index");
         }
+
+
 
     }
 }

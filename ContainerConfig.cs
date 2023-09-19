@@ -1,25 +1,49 @@
-﻿using System;
-using Autofac;//not system.componetn model
-using todo;
-using System.Reflection;
-using System.Linq;
+﻿//using System;
+//using Autofac;
+//using Autofac.Configuration;
+//using Autofac.Core;
+//using Org.BouncyCastle.Crypto.Tls;
+//using todo.Data;
+//using todo.Controllers;
+//using System.Reflection;
+//using System.Linq;
 
-namespace todo
-{
-	public static class ContainerConfig
-	{
-		public static IContainer Configure()//this methods entire job is to configure the container
-		{
-			var builder = new ContainerBuilder();//builder=container builder
+//namespace todo
+//{
+//    public class ContainerConfig
+//    {
+//        public static IContainer Configure()
+//        {
+//            //// Add the configuration to the ConfigurationBuilder.
+//            //var config = new ConfigurationBuilder();
+//            //// config.AddJsonFile comes from Microsoft.Extensions.Configuration.Json
+//            //// config.AddXmlFile comes from Microsoft.Extensions.Configuration.Xml
+//            //config.AddXmlFile("autofac.xml");
 
-			builder.RegisterAssemblyTypes(Assembly.Load(nameof(todo)))
-				.Where(t => t.Namespace.Contains(nameof(Controllers)))
-				.As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == "I" + i.Name));         // register the class
-																								 // whenever you look for an interface Itodocontroller return an instance of todocontroller
+//            //// Register the ConfigurationModule with Autofac.
+//            //var module = new ConfigurationModule(config.Build());
+//            //var builder = new ContainerBuilder();
+//            //builder.RegisterModule(module);
+//            //return builder.Build();
 
-			return builder.Build();//container is a place to store the definitions of all the classes we want to instantiate
-		}
-	}
-}
+//            var configBuilder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddXmlFile("autofac.xml");
+//            var configuration = configBuilder.Build();
+//            //var containerBuilder = new ContainerBuilder();
+//            var configModule = new ConfigurationModule(configuration);
+//            //containerBuilder.RegisterModule(configModule);
+//            //return containerBuilder.Build();
 
+//            //// Create your builder.
+//            //var builder = new ContainerBuilder();
 
+//            //// Usually you're only interested in exposing the type
+//            //// via its interface:
+//            //builder.RegisterAssemblyTypes(Assembly.Load(nameof(todo)))
+//            //    .Where(t => t.Namespace.Contains("Data"))
+//            //    .As(t => t.GetInterfaces().FirstOrDefault(i => i.Name == "I" + t.Name));
+
+//            //builder.RegisterType<AppDbContext>().As<IAppDbContext>();
+
+//        }
+//    }
+//}

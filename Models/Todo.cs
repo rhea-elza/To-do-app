@@ -7,6 +7,6 @@ namespace todo.Models
         [Key]
         public int Id { get; set; }
         [Required]
-        public string Item { get; set; }
+        public string? Item { get; set; }
     }
 }

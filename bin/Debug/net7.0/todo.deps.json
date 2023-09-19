@@ -36,10 +36,13 @@
       "todo/1.0.0": {
         "dependencies": {
           "Autofac": "7.1.0",
+          "Autofac.Configuration": "6.0.0",
           "Autofac.Extensions.DependencyInjection": "8.0.0",
-          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "7.0.10",
+          "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "7.0.11",
           "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.10",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Xml": "7.0.0",
           "MySql.Data.EntityFrameworkCore": "8.0.22",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "Microsoft.AspNetCore.Antiforgery": "7.0.0.0",
@@ -129,26 +132,26 @@
           "Microsoft.Extensions.Caching.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.Caching.Memory.Reference": "7.0.0.0",
           "Microsoft.Extensions.Configuration.Abstractions.Reference": "7.0.0.0",
-          "Microsoft.Extensions.Configuration.Binder": "7.0.0.0",
+          "Microsoft.Extensions.Configuration.Binder.Reference": "7.0.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "7.0.0.0",
-          "Microsoft.Extensions.Configuration": "7.0.0.0",
+          "Microsoft.Extensions.Configuration.Reference": "7.0.0.0",
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "7.0.0.0",
-          "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions.Reference": "7.0.0.0",
           "Microsoft.Extensions.Configuration.Ini": "7.0.0.0",
           "Microsoft.Extensions.Configuration.Json": "7.0.0.0",
           "Microsoft.Extensions.Configuration.KeyPerFile": "7.0.0.0",
           "Microsoft.Extensions.Configuration.UserSecrets": "7.0.0.0",
-          "Microsoft.Extensions.Configuration.Xml": "7.0.0.0",
+          "Microsoft.Extensions.Configuration.Xml.Reference": "7.0.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.DependencyInjection.Reference": "7.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": "7.0.0.0",
           "Microsoft.Extensions.Diagnostics.HealthChecks": "7.0.0.0",
           "Microsoft.Extensions.Features": "7.0.0.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions.Reference": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Composite": "7.0.0.0",
           "Microsoft.Extensions.FileProviders.Embedded": "7.0.0.0",
-          "Microsoft.Extensions.FileProviders.Physical": "7.0.0.0",
-          "Microsoft.Extensions.FileSystemGlobbing": "7.0.0.0",
+          "Microsoft.Extensions.FileProviders.Physical.Reference": "7.0.0.0",
+          "Microsoft.Extensions.FileSystemGlobbing.Reference": "7.0.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "7.0.0.0",
           "Microsoft.Extensions.Hosting": "7.0.0.0",
           "Microsoft.Extensions.Http": "7.0.0.0",
@@ -212,7 +215,7 @@
           "System.Drawing": "4.0.0.0",
           "System.Drawing.Primitives": "7.0.0.0",
           "System.Dynamic.Runtime.Reference": "7.0.0.0",
-          "System.Formats.Asn1": "7.0.0.0",
+          "System.Formats.Asn1.Reference": "7.0.0.0",
           "System.Formats.Tar": "7.0.0.0",
           "System.Globalization.Calendars.Reference": "7.0.0.0",
           "System.Globalization.Reference": "7.0.0.0",
@@ -298,7 +301,7 @@
           "System.Security.Cryptography.OpenSsl.Reference": "7.0.0.0",
           "System.Security.Cryptography.Primitives.Reference": "7.0.0.0",
           "System.Security.Cryptography.X509Certificates.Reference": "7.0.0.0",
-          "System.Security.Cryptography.Xml": "7.0.0.0",
+          "System.Security.Cryptography.Xml.Reference": "7.0.0.0",
           "System.Security": "4.0.0.0",
           "System.Security.Principal": "7.0.0.0",
           "System.Security.Principal.Windows.Reference": "7.0.0.0",
@@ -358,6 +361,22 @@
         },
         "compile": {
           "lib/net7.0/Autofac.dll": {}
+        }
+      },
+      "Autofac.Configuration/6.0.0": {
+        "dependencies": {
+          "Autofac": "7.1.0",
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Autofac.Configuration.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Autofac.Configuration.dll": {}
         }
       },
       "Autofac.Extensions.DependencyInjection/8.0.0": {
@@ -471,7 +490,7 @@
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/7.0.10": {
+      "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/7.0.11": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor.Extensions": "6.0.0",
           "Microsoft.CodeAnalysis.Razor": "6.0.0",
@@ -479,8 +498,8 @@
         },
         "runtime": {
           "lib/net7.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll": {
-            "assemblyVersion": "7.0.10.0",
-            "fileVersion": "7.0.1023.36439"
+            "assemblyVersion": "7.0.11.0",
+            "fileVersion": "7.0.1123.42502"
           }
         },
         "compile": {
@@ -729,9 +748,38 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         }
       },
+      "Microsoft.Extensions.Configuration/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
       "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/2.2.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.FileExtensions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Configuration.Xml/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "7.0.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0",
+          "System.Security.Cryptography.Xml": "7.0.0"
         }
       },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
@@ -755,6 +803,19 @@
           "lib/net7.0/Microsoft.Extensions.DependencyModel.dll": {}
         }
       },
+      "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Physical/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "7.0.0",
+          "Microsoft.Extensions.FileSystemGlobbing": "7.0.0",
+          "Microsoft.Extensions.Primitives": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/7.0.0": {},
       "Microsoft.Extensions.Logging/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
@@ -1145,6 +1206,7 @@
           "System.Threading": "4.0.11"
         }
       },
+      "System.Formats.Asn1/7.0.0": {},
       "System.Globalization/4.0.11": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1535,6 +1597,14 @@
           "runtime.native.System.Security.Cryptography": "4.0.0"
         }
       },
+      "System.Security.Cryptography.Pkcs/7.0.0": {
+        "dependencies": {
+          "System.Formats.Asn1": "7.0.0"
+        },
+        "compile": {
+          "lib/net7.0/System.Security.Cryptography.Pkcs.dll": {}
+        }
+      },
       "System.Security.Cryptography.Primitives/4.0.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.0.11",
@@ -1589,6 +1659,11 @@
           "runtime.native.System": "4.0.0",
           "runtime.native.System.Net.Http": "4.0.1",
           "runtime.native.System.Security.Cryptography": "4.0.0"
+        }
+      },
+      "System.Security.Cryptography.Xml/7.0.0": {
+        "dependencies": {
+          "System.Security.Cryptography.Pkcs": "7.0.0"
         }
       },
       "System.Security.Permissions/4.7.0": {
@@ -2305,7 +2380,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.Binder/7.0.0.0": {
+      "Microsoft.Extensions.Configuration.Binder.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Binder.dll": {}
         },
@@ -2317,7 +2392,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration/7.0.0.0": {
+      "Microsoft.Extensions.Configuration.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.dll": {}
         },
@@ -2329,7 +2404,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.FileExtensions/7.0.0.0": {
+      "Microsoft.Extensions.Configuration.FileExtensions.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.FileExtensions.dll": {}
         },
@@ -2359,7 +2434,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.Configuration.Xml/7.0.0.0": {
+      "Microsoft.Extensions.Configuration.Xml.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.Configuration.Xml.dll": {}
         },
@@ -2395,7 +2470,7 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/7.0.0.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Abstractions.dll": {}
         },
@@ -2413,13 +2488,13 @@
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
+      "Microsoft.Extensions.FileProviders.Physical.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileProviders.Physical.dll": {}
         },
         "compileOnly": true
       },
-      "Microsoft.Extensions.FileSystemGlobbing/7.0.0.0": {
+      "Microsoft.Extensions.FileSystemGlobbing.Reference/7.0.0.0": {
         "compile": {
           "Microsoft.Extensions.FileSystemGlobbing.dll": {}
         },
@@ -2803,7 +2878,7 @@
         },
         "compileOnly": true
       },
-      "System.Formats.Asn1/7.0.0.0": {
+      "System.Formats.Asn1.Reference/7.0.0.0": {
         "compile": {
           "System.Formats.Asn1.dll": {}
         },
@@ -3319,7 +3394,7 @@
         },
         "compileOnly": true
       },
-      "System.Security.Cryptography.Xml/7.0.0.0": {
+      "System.Security.Cryptography.Xml.Reference/7.0.0.0": {
         "compile": {
           "System.Security.Cryptography.Xml.dll": {}
         },
@@ -3574,6 +3649,13 @@
       "path": "autofac/7.1.0",
       "hashPath": "autofac.7.1.0.nupkg.sha512"
     },
+    "Autofac.Configuration/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ziOpbr0S0ufYv+6LqM8GX9oR7rlP6KICVxZmCAML6PcncvZ9Y/m8tcpuPXLD6vDyfNvfCq1drYxNVzwBT0+gkA==",
+      "path": "autofac.configuration/6.0.0",
+      "hashPath": "autofac.configuration.6.0.0.nupkg.sha512"
+    },
     "Autofac.Extensions.DependencyInjection/8.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3630,12 +3712,12 @@
       "path": "microsoft.aspnetcore.mvc.razor.extensions/6.0.0",
       "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/7.0.10": {
+    "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation/7.0.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UAvlO/NmqwQGpLwBrrnlNaJ7Hy4JfuKTiPYTCH0+fVNI4NOwEilBQAn7b4AwrT/UOQgzcpAJ3njnVODaqeKXPA==",
-      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/7.0.10",
-      "hashPath": "microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.10.nupkg.sha512"
+      "sha512": "sha512-skggKXGEvvjf1C+gLSncoP64iYbQmAkZk53AweMRE4oi4zsAo/mxt7XkKC+JOu0nEdBwNTElPznD++TBGxBgfg==",
+      "path": "microsoft.aspnetcore.mvc.razor.runtimecompilation/7.0.11",
+      "hashPath": "microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.11.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.0": {
       "type": "package",
@@ -3735,12 +3817,40 @@
       "path": "microsoft.extensions.caching.memory/7.0.0",
       "hashPath": "microsoft.extensions.caching.memory.7.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tldQUBWt/xeH2K7/hMPPo5g8zuLc3Ro9I5d4o/XrxvxOCA2EZBtW7bCHHTc49fcBtvB8tLAb/Qsmfrq+2SJ4vA==",
+      "path": "microsoft.extensions.configuration/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.7.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Configuration.Abstractions/7.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-f34u2eaqIjNO9YLHBz8rozVZ+TcFiFs0F3r7nUJd7FRkVSxk8u4OpoK226mi49MwexHOR2ibP9MFvRUaLilcQQ==",
       "path": "microsoft.extensions.configuration.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Binder/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vJ9xvOZCnUAIHcGC3SU35r3HKmHTVIeHzo6u/qzlHAqD8m6xv92MLin4oJntTvkpKxVX3vI1GFFkIQtU3AdlsQ==",
+      "path": "microsoft.extensions.configuration.binder/2.2.0",
+      "hashPath": "microsoft.extensions.configuration.binder.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.FileExtensions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xk2lRJ1RDuqe57BmgvRPyCt6zyePKUmvT6iuXqiHR+/OIIgWVR8Ff5k2p6DwmqY8a17hx/OnrekEhziEIeQP6Q==",
+      "path": "microsoft.extensions.configuration.fileextensions/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Configuration.Xml/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KXmN/llitPZydHbW3cac7MQHGPUXPi4783tYxsBqSAFJgcaYTdLmsboFL7Ss4TsnelF0+v4ZMpEkKTtCtpysiA==",
+      "path": "microsoft.extensions.configuration.xml/7.0.0",
+      "hashPath": "microsoft.extensions.configuration.xml.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",
@@ -3762,6 +3872,27 @@
       "sha512": "sha512-oONNYd71J3LzkWc4fUHl3SvMfiQMYUCo/mDHDEu76hYYxdhdrPYv6fvGv9nnKVyhE9P0h20AU8RZB5OOWQcAXg==",
       "path": "microsoft.extensions.dependencymodel/7.0.0",
       "hashPath": "microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NyawiW9ZT/liQb34k9YqBSNPLuuPkrjMgQZ24Y/xXX1RoiBkLUdPMaQTmxhZ5TYu8ZKZ9qayzil75JX95vGQUg==",
+      "path": "microsoft.extensions.fileproviders.abstractions/7.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Physical/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K8D2MTR+EtzkbZ8z80LrG7Ur64R7ZZdRLt1J5cgpc/pUWl0C6IkAUapPuK28oionHueCPELUqq0oYEvZfalNdg==",
+      "path": "microsoft.extensions.fileproviders.physical/7.0.0",
+      "hashPath": "microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2jONjKHiF+E92ynz2ZFcr9OvxIw+rTGMPEH+UZGeHTEComVav93jQUWGkso8yWwVBcEJGcNcZAaqY01FFJcj7w==",
+      "path": "microsoft.extensions.filesystemglobbing/7.0.0",
+      "hashPath": "microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",
@@ -4007,6 +4138,13 @@
       "sha512": "sha512-db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
       "path": "system.dynamic.runtime/4.0.11",
       "hashPath": "system.dynamic.runtime.4.0.11.nupkg.sha512"
+    },
+    "System.Formats.Asn1/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+nfpV0afLmvJW8+pLlHxRjz3oZJw4fkyU9MMEaMhCsHi/SN9bGF9q79ROubDiwTiCHezmK0uCWkPP7tGFP/4yg==",
+      "path": "system.formats.asn1/7.0.0",
+      "hashPath": "system.formats.asn1.7.0.0.nupkg.sha512"
     },
     "System.Globalization/4.0.11": {
       "type": "package",
@@ -4274,6 +4412,13 @@
       "path": "system.security.cryptography.openssl/4.0.0",
       "hashPath": "system.security.cryptography.openssl.4.0.0.nupkg.sha512"
     },
+    "System.Security.Cryptography.Pkcs/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mjUbEXkR6DYRef6dnEYKdfec9otcAkibExL+1f9hmbGlWIUyaCnS3Y3oGZEet38waXmuY1ORE8vgv4sgD5nMYg==",
+      "path": "system.security.cryptography.pkcs/7.0.0",
+      "hashPath": "system.security.cryptography.pkcs.7.0.0.nupkg.sha512"
+    },
     "System.Security.Cryptography.Primitives/4.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4294,6 +4439,13 @@
       "sha512": "sha512-4HEfsQIKAhA1+ApNn729Gi09zh+lYWwyIuViihoMDWp1vQnEkL2ct7mAbhBlLYm+x/L4Rr/pyGge1lIY635e0w==",
       "path": "system.security.cryptography.x509certificates/4.1.0",
       "hashPath": "system.security.cryptography.x509certificates.4.1.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.Xml/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LHc5PUypYGAMNf/2DzCxOXREKamwCtdUtxb/WpCnHngORVYZbUdSMnm1PcKvEvzKUTKSC0CL6aVAywzbEEeNQg==",
+      "path": "system.security.cryptography.xml/7.0.0",
+      "hashPath": "system.security.cryptography.xml.7.0.0.nupkg.sha512"
     },
     "System.Security.Permissions/4.7.0": {
       "type": "package",
@@ -4870,7 +5022,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.Binder/7.0.0.0": {
+    "Microsoft.Extensions.Configuration.Binder.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4880,7 +5032,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration/7.0.0.0": {
+    "Microsoft.Extensions.Configuration.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4890,7 +5042,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.FileExtensions/7.0.0.0": {
+    "Microsoft.Extensions.Configuration.FileExtensions.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4915,7 +5067,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.Configuration.Xml/7.0.0.0": {
+    "Microsoft.Extensions.Configuration.Xml.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4945,7 +5097,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/7.0.0.0": {
+    "Microsoft.Extensions.FileProviders.Abstractions.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4960,12 +5112,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileProviders.Physical/7.0.0.0": {
+    "Microsoft.Extensions.FileProviders.Physical.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.Extensions.FileSystemGlobbing/7.0.0.0": {
+    "Microsoft.Extensions.FileSystemGlobbing.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5285,7 +5437,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Formats.Asn1/7.0.0.0": {
+    "System.Formats.Asn1.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -5715,7 +5867,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Security.Cryptography.Xml/7.0.0.0": {
+    "System.Security.Cryptography.Xml.Reference/7.0.0.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

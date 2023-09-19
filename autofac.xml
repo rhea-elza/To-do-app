@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<autofac defaultAssembly="todo">
+    <components name="0">
+        <type>todo.Data.AppDbContext</type>
+        <services name="0" type="todo.Data.IAppDbContext" />
+        <injectProperties>true</injectProperties>
+        <instanceScope>perdependency</instanceScope>
+    </components>
+</autofac>
+
